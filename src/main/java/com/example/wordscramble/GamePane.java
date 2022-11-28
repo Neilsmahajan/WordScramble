@@ -108,22 +108,22 @@ public class GamePane extends BorderPane
         // Initialize word banks and adds them to word bank list
         wordBankList = new ArrayList<>();
         foodBank = new ArrayList<>(Arrays.asList("sandwich", "spatula", "pizza", "zest", "cheese", "artichoke", "grape",
-                "milk", "McDonalds", "lasagna", "toaster", "pretzel", "bread", "jellybeans", "mushroom", "cupcakes",
+                "milk", "mcdonalds", "lasagna", "toaster", "pretzel", "bread", "jellybeans", "mushroom", "cupcakes",
                 "wok", "oven", "corn", "avocado", "whisk", "dairy", "poultry", "noodles", "banana", "simmer", "freeze",
                 "blender", "cornbread", "produce", "oven", "poach", "apple", "vinegar", "meatballs"));
         wordBankList.add(new WordBank(foodBank));
-        animalsBank = new ArrayList<>(Arrays.asList("panda", "housecat", "moth", "moose", "water buffalo",
-                "caterpillar","albatross", "duck", "mouse", "salamander", "goose", "rat", "aardvark", "joey",
-                "robin", "horse", "koala", "hippopotamus", "camel", "cougar", "giraffe", "bald eagle",
-                "crocodile", "dog", "bird", "penguin", "pony", "bat", "otter", "porcupine", "dolphin", "hamster",
-                "chameleon", "swordfish", "groundhog", "cricket", "clownfish", "leopard", "rabbit",
-                "buffalo", "shark", "stallion", "wombat", "kitten", "reindeer", "wolf", "dragon", "hyena",
-                "unicorn", "tuna", "platypus", "shrimp", "skunk", "bulldog", "ladybug", "beaver"));
+        animalsBank = new ArrayList<>(Arrays.asList("panda", "housecat", "moth", "moose",
+                "caterpillar","albatross", "duck", "mouse", "salamander", "goose", "rat", "aardvark", "joey", "robin",
+                "horse", "koala", "hippopotamus", "camel", "cougar", "giraffe", "crocodile", "dog", "bird", "penguin",
+                "pony", "bat", "otter", "porcupine", "dolphin", "hamster", "chameleon", "swordfish", "groundhog",
+                "cricket", "clownfish", "leopard", "rabbit", "buffalo", "shark", "stallion", "wombat", "kitten",
+                "reindeer", "wolf", "dragon", "hyena", "unicorn", "tuna", "platypus", "shrimp", "skunk", "bulldog",
+                "ladybug", "beaver"));
         wordBankList.add(new WordBank(animalsBank));
-        christmasBank = new ArrayList<>(Arrays.asList("gifts", "cookies", "Santa", "reindeer", "gingerbread", "eggnog",
+        christmasBank = new ArrayList<>(Arrays.asList("gifts", "cookies", "santa", "reindeer", "gingerbread", "eggnog",
                 "elves", "stocking", "soup", "snowman", "snow", "cinnamon", "snowball", "decorations", "angel",
-                "snowflake", "chimney", "star", "Rudolph", "sledding", "bells", "scarf", "lights", "doll", "Grinch",
-                "shepherds", "Nutcracker", "mistletoe", "mittens", "toys"));
+                "snowflake", "chimney", "star", "rudolph", "sledding", "bells", "scarf", "lights", "doll", "grinch",
+                "shepherds", "nutcracker", "mistletoe", "mittens", "toys"));
         wordBankList.add(new WordBank(christmasBank));
         // Initialize word bank index, number of guesses, number of words guessed, number of words not guessed, and hint count
         wordBankIndex = 0;
@@ -227,7 +227,7 @@ public class GamePane extends BorderPane
             // TASK 4: Implement the button handler
 
             // If the source of the event is the hint button
-            if (event.getSource() == hintBtn)
+            if (event.getSource() == hintBtn && messageLbl.getText().charAt(0) == 'C')
             {
                 // If the hint count is greater than the number of letters in the word minus three then deny the player
                 if (hintCount > currentWordBank.getCurrentWord().getWordLength() - 3)
