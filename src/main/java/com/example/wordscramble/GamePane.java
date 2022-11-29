@@ -227,7 +227,7 @@ public class GamePane extends BorderPane
             // TASK 4: Implement the button handler
 
             // If the source of the event is the hint button
-            if (event.getSource() == hintBtn && messageLbl.getText().charAt(0) == 'C')
+            if (event.getSource() == hintBtn && messageLbl.getText().charAt(0) != 'C')
             {
                 // If the hint count is greater than the number of letters in the word minus three then deny the player
                 if (hintCount > currentWordBank.getCurrentWord().getWordLength() - 3)
